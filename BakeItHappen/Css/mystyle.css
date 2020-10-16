@@ -16,6 +16,14 @@
     color: rgb(221, 150, 17);
 }
 
+.submit-link{
+    color: rgb(255, 166, 0);
+}
+
+.submit-link:hover{
+    color: rgb(221, 150, 17);
+}
+
 .main-search-form  {
     border: 2px solid #ffa600;
     border-top-left-radius: .8rem;
