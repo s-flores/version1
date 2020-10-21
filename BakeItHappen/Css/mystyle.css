@@ -1,3 +1,4 @@
+--removes scroll bar
 .overlay{
     position:fixed;
     padding:0;
@@ -9,19 +10,15 @@
 
 }
 
-.login-link{
+/*.navbar{
     color: rgb(255, 166, 0);
 }
-.login-link:hover{
+.navbar:hover{
     color: rgb(221, 150, 17);
-}
+}*/
 
-.submit-link{
-    color: rgb(255, 166, 0);
-}
-
-.submit-link:hover{
-    color: rgb(221, 150, 17);
+.navbar.navbar-dark.top-nav-collapse .navbar-nav .nav-item .nav-link {
+    color: red;
 }
 
 .main-search-form  {
@@ -30,6 +27,7 @@
     border-bottom-left-radius: .3rem;
 }
 
+--search bar, highlights when clicked, provides interactivity
 .form-control:focus {
     border-color: #ff8800;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
@@ -57,9 +55,15 @@
     color:  #b1a394;
 }
 
-.header-img-center{
-	#display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 80%;
+
+.img-long{
+	width: 100%
+}
+
+h1{
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: .5em;
+	font-family: serif;
+	color: rgb(255, 166, 0);
 }
