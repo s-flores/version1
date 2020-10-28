@@ -1,35 +1,73 @@
---removes scroll bar
+/* --removes scroll bar */
 .overlay{
-    position:fixed;
+    position:absolute;
     padding:0;
     margin:0;
     top:0;
     left:0;
+    
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+/* CUSTOM TITLE FONT */
+@font-face {
+    font-family: titleFont;
+    src: url(../Fonts/QuiteMagicalRegular-8VA2.ttf);
+}
+
+/* BAKE IT HAPPEN TITLE */
+#title{
+    font-family: titleFont;
+    text-align: center;
+	padding-top: .5em;
+    padding-bottom: .1em;
+    font-size: 4rem;
+    color:#ffa600;
+}
+
+/* GROUP CONTAINING SEARCH BAR AND BUTTONS */
+.search-group{
+    padding-bottom: 2rem;
+}
+
+/* fixes navbar to the top so it is over the banner */
+.navbar {
+    position: absolute;
     width: 100%;
-    height: 100%;
-
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
 }
 
-/*.navbar{
-    color: rgb(255, 166, 0);
-}
-.navbar:hover{
-    color: rgb(221, 150, 17);
-}*/
+/* black background behind navbar when screen is narrow */
+/* @media only screen and (max-width: 750px) {
+    .nav-link {
+        background-color: rgb(0, 0, 0,.4);
+    }
+} */
 
-.navbar.navbar-dark.top-nav-collapse .navbar-nav .nav-item .nav-link {
-    color: red;
+.nav-link{
+    color: orange;
+}
+.nav-link:hover{
+    color: darkorange;
 }
 
-.main-search-form  {
+
+/* SEARCH BAR */
+.main-search-form{
     border: 2px solid #ffa600;
     border-top-left-radius: .8rem;
     border-bottom-left-radius: .3rem;
 }
 
---search bar, highlights when clicked, provides interactivity
+/* search bar, highlights when clicked, provides interactivity */
 .form-control:focus {
-    border-color: #ff8800;
+    border-color:  #ffa600;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
 }
 
@@ -39,7 +77,7 @@
 }
 
 .search-button:active{
-    color: rgb(255, 153, 0);
+    color:  #ffa600;
 }
 
 .input-group-text:focus{
@@ -55,15 +93,6 @@
     color:  #b1a394;
 }
 
-
 .img-long{
 	width: 100%
-}
-
-h1{
-	text-align: center;
-	padding-top: 1em;
-	padding-bottom: .5em;
-	font-family: serif;
-	color: rgb(255, 166, 0);
 }

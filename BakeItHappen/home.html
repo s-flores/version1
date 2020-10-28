@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
-  
-  <!-- URL http://nrs-projects.humboldt.edu/~amt954/458project/BakeItHappen/home.html -->
+
+    <!-- URL http://nrs-projects.humboldt.edu/~dmb851/bakeithappen/version2/BakeItHappen/home.html -->
   
   <head>
     <!-- Required meta tags -->
@@ -11,84 +11,81 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="Css/mystyle.css">
-
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
 
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="Css/mystyle.css">
 
-    <title>Bake It Happen!</title>
+    <title >Bake It Happen!</title>
   </head>
+
   <body>
-   	
-        <div class="container-fluid overlay">
-            <header>
-                <div class="bottomHeader "> <!--Container for top navigation bar?-->
-					<div class="container-fluid  ">
-						<nav class="navbar navbar-expand-sm bg-transparent"> <!--Top navigation bar-->
-							<ul class="navbar-nav ml-auto"> 
-								<li class="nav-item"> 
-									<a class="nav-link" href="/submit.html"> 
-									Submit Recipe 
-									</a> 
-								</li> 
-								<li class="nav-item"> 
-									<a class="nav-link" href="/home2.html"> 
-									Login/Signup 
-									</a> 
-								</li> 
-							</ul> 
-						</nav> 
-					</div>
-                </div>
-            </header>
-			
-			<img src="Pictures/bih-longheader.png" class="img-long" width="1000"  alt=""> <!--Front page banner image-->
+    <div class="container-fluid overlay">
+        <header>
+            <!--Front page banner image-->
+            <img src="Pictures/banner2.png" class="img-long" width="1000" height="" alt="">
+
+            <!--Top navigation bar-->
+            <div class="container-fluid ">
+                <nav class="navbar navbar-expand  bg-transparent"> 
+                    <ul class="navbar-nav ml-auto "> 
+                        <!-- <li class="nav-item  "> 
+                            <a class="nav-link rounded-left" href="foodmap.html"> 
+                            Find Restaurants 
+                            </a> 
+                        </li>  -->
+
+                        <li class="nav-item"> 
+                            <a class="nav-link  " href="/submit.html"> 
+                            Submit Recipe 
+                            </a> 
+                        </li> 
+                        <li class="nav-item "> 
+                            <a class="nav-link rounded-right " href="/home2.html"> 
+                            Login/Signup 
+                            </a> 
+                        </li> 
+                       
+                    </ul> 
+                </nav> 
+            </div>  
+        </header>
+
+        <section>
             <div class="container">
-                <section>
-                    <div class="row  justify-content-center">
-                        <div class="col-md-6 text-center ">
-                            <!--<img src="Pictures/bih-longheader.png" class="img-fluid" alt="">-->
-                        </div>
-                    </div>
-					<h1>Bake It Happen</h1> <!--Page title, just above search bar-->
-                    <div class="row justify-content-center mt-4">
-                        <div class="col-md-10">
-                            <div class="input-group shadow md-form form-sm pl-0"> <!--search bar? Or the container for search bar?-->
-                                <input class="form-control my-0 py-4  main-search-form" type="text" placeholder="Enter Ingredients, Recipes, Allergens, etc..." aria-label="Search">
-                                <div class="input-group-append">
-                                <button class="input-group-text  lighten-2 search-button" id="basic-text1"><i class="fas fa-search"
-                                    aria-hidden="true"></i></button>
-                                <button class="input-group-text  lighten-2 search-button" id="basic-text1"><i class="fas fa-dice"></i></button>
-                                </div>
+                <!--Page title, just above search bar-->
+                <h1 class="alt-font" id="title">Bake It Happen</h1> 
+
+                <!--Search bar and search buttons group-->
+                <div class="row justify-content-center mt-4 search-group">
+                    <div class="col-md-10">
+                        <div class="input-group shadow md-form form-sm pl-0"> 
+                            <!-- SEARCH BAR -->
+                            <input class="form-control my-0 py-4  main-search-form " type="text" placeholder="Enter Ingredients, Recipes, Allergens, etc..." aria-label="Search">
+                            
+                            <!-- SEARCH BUTTONS -->
+                            <div class="input-group-append">
+                            <button class="input-group-text  lighten-2 search-button" id="basic-text1"><i class="fas fa-search"
+                                aria-hidden="true"></i></button>
+                            <button class="input-group-text  lighten-2 search-button" id="basic-text1"><i class="fas fa-dice"></i></button>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
 
-                <section> <!--Bottom section of page, contains silly quote-->
-                    <div class="row mt-5">
-
+                <!--Bottom section of page, contains silly quote-->
+                <div class="row justify-content-center text-center m-5 ">
+                    <div class="col-md-8 quote ">
+                        <h7>"Ask not what you can do for your country. Ask what's for lunch."
+                            - Orson Welles</h7>
                     </div>
-                    <div class="row mt-5">
-
-                    </div>
-                    <div class="row justify-content-center text-center m-5">
-                        <div class="col-md-8 quote ">
-                            <h7>"Ask not what you can do for your country. Ask what's for lunch."
-                                - Orson Welles</h7>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
-        </div>
+        </section>
+    </div>
 		
     
-
-   
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
