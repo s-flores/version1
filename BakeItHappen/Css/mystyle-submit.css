@@ -28,7 +28,14 @@
     color:#ffa600;
 }
 
-
+/* BAKE IT HAPPEN SUBTITLE - found on: Subtmit Recipe page */
+#subtitle{
+    font-family: titleFont;
+    text-align: center;
+	padding-top: .5em;
+    padding-bottom: .1em;
+    font-size: 2rem;
+    color:#ffa600;
 }
 
 /* GROUP CONTAINING SEARCH BAR AND BUTTONS */
