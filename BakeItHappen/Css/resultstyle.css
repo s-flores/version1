@@ -1,0 +1,177 @@
+/* --removes scroll bar */
+.overlay{
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    
+
+    width: auto;
+    height: auto;
+
+}
+
+/* CUSTOM TITLE FONT */
+@font-face {
+    font-family: titleFont;
+    src: url(../Fonts/QuiteMagicalRegular-8VA2.ttf);
+}
+
+/* BAKE IT HAPPEN TITLE */
+#title{
+    font-family: titleFont;
+    text-align: center;
+	padding-top: .5em;
+    padding-bottom: .1em;
+    font-size: 4rem;
+    color:#ffa600;
+}
+
+/* GROUP CONTAINING SEARCH BAR AND BUTTONS */
+.search-group{
+    padding-bottom: 2rem;
+}
+
+/* fixes navbar to the top so it is over the banner */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+.navbar-brand{
+    font-family:titleFont;
+    font-size: 2rem;
+    color:#ffa600 !important;
+    
+}
+
+/* black background behind navbar when screen is narrow */
+@media only screen and (max-width: 768px) {
+    .nav-link {
+        background-color: rgb(0, 0, 0,1);
+        border-style: dashed;
+    }
+}
+
+.nav-link{
+    color:#ffa600  !important ;
+    text-shadow: 5px 1px 35px black;
+    
+}
+.nav-link:hover{
+    color: darkorange !important;
+}
+
+
+/* SEARCH BAR */
+.main-search-form{
+    border: 2px solid #ffa600;
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+}
+/* SEARCH BAR */
+.small-search-form{
+    border: 3px solid #ffa600;
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+    
+
+}
+
+
+/* search bar, highlights when clicked, provides interactivity */
+.form-control:focus {
+    border-color:  #ffa600;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+}
+
+
+
+.search-button-small{
+    background-color: white;
+    font-size: .75rem;
+    width: 0%;
+    justify-content: center;
+    
+}
+
+.search-button, .search-button-small:active{
+    color:  #ffa600;
+}
+
+.input-group-text:focus{
+    outline:  none;
+}
+
+.input-group-text{
+    border: 2px solid #ffa600;
+}
+
+.quote{
+    font-style: italic;
+    color:  #b1a394;
+}
+
+.img-long{
+    width: 100%;
+    
+}
+
+.recipe-item{
+    color: black;
+    overflow: hidden !important;
+    text-decoration:none ;
+}
+
+.recipe-item:hover{
+    color: black;
+    overflow: hidden;
+    text-decoration:none;
+}
+
+.recipe-name{
+    font-size: 2.25rem;
+}
+
+.recipe-desc{
+    font-size: 1.5rem;
+}
+
+.orange-border{
+    border-color:rgb(255, 153, 0, .1) !important;
+    border: solid;
+}
+.orange-border:hover{
+    border-color:rgb(255, 153, 0, .6) !important;
+    border: dashed;
+}
+
+.search-result-title{
+    font-family: titleFont;
+    font-size: 3rem;
+}
+
+
+.orange-color{
+    color: orange !important;
+}
+
+
+.orange-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 166, 0,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    /* background-image: url("/food-svgrepo-com.svg "); */
+    /* background-image: url("/Pictures/bihstickfigure.png"); */
+  }
+
+.orange-toggler{
+    border: none;
+}
+  
+
+.search-item{
+}

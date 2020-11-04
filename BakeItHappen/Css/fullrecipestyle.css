@@ -1,0 +1,115 @@
+/* --removes scroll bar */
+.overlay{
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    
+
+    width: auto;
+    height: auto;
+
+}
+
+/* CUSTOM TITLE FONT */
+@font-face {
+    font-family: titleFont;
+    src: url(../Fonts/QuiteMagicalRegular-8VA2.ttf);
+}
+
+/* BAKE IT HAPPEN TITLE */
+#title{
+    font-family: titleFont;
+    text-align: center;
+	padding-top: .5em;
+    padding-bottom: .1em;
+    font-size: 4rem;
+    color:#ffa600;
+}
+
+/* GROUP CONTAINING SEARCH BAR AND BUTTONS */
+.search-group{
+    padding-bottom: 2rem;
+}
+
+/* fixes navbar to the top so it is over the banner */
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* black background behind navbar when screen is narrow */
+/* @media only screen and (max-width: 750px) {
+    .nav-link {
+        background-color: rgb(0, 0, 0,.4);
+    }
+} */
+
+.nav-link{
+    color: orange !important ;
+}
+.nav-link:hover{
+    color: darkorange !important;
+}
+
+
+/* SEARCH BAR */
+.main-search-form{
+    border: 2px solid #ffa600;
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+}
+/* SEARCH BAR */
+.small-search-form{
+    border: 3px solid #ffa600;
+    border-top-left-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+    width: 0%;
+}
+
+
+/* search bar, highlights when clicked, provides interactivity */
+.form-control:focus {
+    border-color:  #ffa600;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
+}
+
+
+.search-button{
+    background-color: white;
+    font-size: 1.3rem;
+}
+.search-button-small{
+    background-color: white;
+    font-size: 1rem;
+    width: 0%;
+    justify-content: center;
+    
+}
+
+.search-button:active{
+    color:  #ffa600;
+}
+
+.input-group-text:focus{
+    outline:  none;
+}
+
+.input-group-text{
+    border: 2px solid #ffa600;
+}
+
+.quote{
+    font-style: italic;
+    color:  #b1a394;
+}
+
+.img-long{
+    width: 100%;
+    
+}

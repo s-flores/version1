@@ -2,6 +2,8 @@
 var recipeResults;
 var recipeId;
 var fullRecipeUrl;
+var searchValues ;
+var randomOffset;
 
 var NUMBER_OF_RESULTS = 10;
 
@@ -15,14 +17,17 @@ var url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + APIKEY;
 
 $(document).ready(function() {
     //get search value from session storage
-    var searchValues = String(sessionStorage.getItem("searchValues")); 
+    searchValues = String(sessionStorage.getItem("searchValues")); 
     recipeResults = document.getElementById("recipe-results");
+    recipeSearchValues = document.getElementById("searchResultTitle");
+    randomOffset = String(sessionStorage.getItem("randomOffset"));
 
     //Append search value to url
     url += "&query=";
     url += searchValues;
     // url += "&includeIngredients=" + searchValues;
     url += "&number=" + NUMBER_OF_RESULTS;
+    url += "&offset=" + randomOffset;
 
     //CALL THE FUNCTION TO CONNECT TO API and return the recipe list
     getRecipesAsync()
@@ -44,15 +49,33 @@ async function getRecipesAsync()
 //FUNCTION THAT HAPPENS AFTER WE CONNECT TO THE API
 function showRecipes(recipeList){
   recipeResults.innerHTML = "";
-  
+  recipeSearchValues.innerHTML="";
+  recipeSearchValues.innerHTML=searchValues;
   for (i = 0; i < recipeList.results.length; i++) {
-      resultUrl = recipeList["results"][i].url;
-      recipeTitle = recipeList["results"][i].title;
-      recipeId =  recipeList["results"][i].id;
+      resultUrl = String(recipeList["results"][i].image);
+      recipeTitle = String(recipeList["results"][i].title);
+      recipeId =  String(recipeList["results"][i].id);
+      
 
+      //OUTPUT RECIPES
       //put recipe id in session storage
-      recipeResults.innerHTML += "<a href='fullrecipe.html' onclick='addToSessionVariable("+ recipeId + ");' >" + recipeTitle + "</a>";
-      recipeResults.innerHTML += "<br>";
+      // recipeResults.innerHTML += "<a href='fullrecipe.html' onclick='addToSessionVariable("+ recipeId + ");' >" + recipeTitle + "</a>";
+      // recipeResults.innerHTML += "<br>";
+
+      recipeResults.innerHTML += `<a href='fullrecipe.html' onclick='addToSessionVariable(`+ recipeId + `);' class='orange-border rounded mt-1 row p-3 recipe-item' >
+                                      <div class='col-md-4'>
+                                            <div class='image'> 
+                                                    <img src=`+ resultUrl + ` class='rounded' width='200px' height='200px'> 
+                                              </div>
+                                        </div>
+              
+                                        <div class='col-md-8'>
+                                            <div class='description'> 
+                                                      <div class='recipe-name m-1 mt-md-5'> `+ recipeTitle +` </div>
+                                            </div> 
+                                        </div> 
+                                  </a>`;
+                                           
     }
 }
 

@@ -10,8 +10,15 @@ randomButton.onclick = startRandomSearch;
 function startRegularSearch(event) {
     //prevent the default submit action 
     event.preventDefault();
+    //INITIALIZE OFFSET TO ZERO, BECAUSE IT WILL BE FROM LAST USE
+    sessionStorage.setItem("randomOffset", 0);
 
     searchValues = document.getElementById("search").value;
+    
+    if (searchValues == ""){
+        randomOffset = getRndInteger(0,1000);
+        sessionStorage.setItem("randomOffset", randomOffset);
+    }
 
     //Save search value into a session variable
     sessionStorage.setItem("searchValues", searchValues);
