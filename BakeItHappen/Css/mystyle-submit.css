@@ -7,8 +7,8 @@
     left:0;
     
 
-    width: auto;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
 
 }
 
@@ -28,7 +28,14 @@
     color:#ffa600;
 }
 
-
+/* BAKE IT HAPPEN SUBTITLE - found on: Subtmit Recipe page */
+#subtitle{
+    font-family: titleFont;
+    text-align: center;
+	padding-top: .5em;
+    padding-bottom: .1em;
+    font-size: 2rem;
+    color:#ffa600;
 }
 
 /* GROUP CONTAINING SEARCH BAR AND BUTTONS */
@@ -42,7 +49,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0.5);
     z-index: 100;
 }
 
@@ -54,10 +61,10 @@
 } */
 
 .nav-link{
-    color: orange !important ;
+    color: orange;
 }
 .nav-link:hover{
-    color: darkorange !important;
+    color: darkorange;
 }
 
 
@@ -67,14 +74,6 @@
     border-top-left-radius: .8rem;
     border-bottom-left-radius: .3rem;
 }
-/* SEARCH BAR */
-.small-search-form{
-    border: 3px solid #ffa600;
-    border-top-left-radius: .8rem;
-    border-bottom-left-radius: .3rem;
-    width: 0%;
-}
-
 
 /* search bar, highlights when clicked, provides interactivity */
 .form-control:focus {
@@ -82,12 +81,10 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 102, 0, 0.6);
 }
 
-
 .search-button{
     background-color: white;
     font-size: 1.3rem;
 }
-
 
 .search-button:active{
     color:  #ffa600;
@@ -108,8 +105,7 @@
 
 /* Home page banner imgage width */
 .img-long{
-    width: 100%;
-    
+	width: 100%
 }
 
 form{
