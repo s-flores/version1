@@ -2,6 +2,8 @@ var APIKEY = "a8f4860704d44fa28ba5806a45f72a14";
 var recipeInstructions = document.getElementById('instructions');
 var recipeIngredients = document.getElementById('ingredients');
 var recipeTitle = document.getElementById('recipeTitle');
+var recipeServings = document.getElementById('recipeServings');
+var recipeTime = document.getElementById('recipeTime');
 var fullRecipeUrl;
 var ingredientsUrl;
 var recipeIdFromStorage;
@@ -18,10 +20,7 @@ function getFullRecipe(){
     recipeIdFromStorage = String(sessionStorage.getItem("recipeId")); 
     fullRecipeUrl = "https://api.spoonacular.com/recipes/"+ recipeIdFromStorage +"/analyzedInstructions?apiKey=" + APIKEY;
 
-    // TODO: USE THIS LINK INSTEAD BECAUSE IT WILL GIVE RECIPE INFORMATION AS WELL
-    // https://api.spoonacular.com/recipes/716429/information?includeNutrition=false
-
-    ingredientsUrl =  "https://api.spoonacular.com/recipes/"+ recipeIdFromStorage +"/ingredientWidget.json?apiKey=" + APIKEY;
+    ingredientsUrl =  "https://api.spoonacular.com/recipes/"+ recipeIdFromStorage +"/information?apiKey=" + APIKEY;
 
     //CALL THE FUNCTION TO Connect to api to get INGREDIENTS
     getIngredientsAsync()
@@ -50,11 +49,17 @@ async function getIngredientsAsync()
 
 // OUTPUTS INGREDIENTS
 function showIngredients(ingredients){
-   
-    for(i = 0; i< ingredients["ingredients"].length; i++){
-        var ingredientName= String(ingredients["ingredients"][i].name);
-        var ingredientAmountValue= String(ingredients["ingredients"][i]["amount"]["us"].value);
-        var ingredientAmountUnit= String(ingredients["ingredients"][i]["amount"]["us"].unit);
+    var recipeName = String(ingredients.title);
+    var recipeServing = String(ingredients.servings);
+    var readyInTime = String(ingredients.readyInMinutes);
+    recipeTitle.innerHTML = recipeName;
+    recipeServings.innerHTML += recipeServing;
+    recipeTime.innerHTML += readyInTime + " Minutes";
+    for(i = 0; i< ingredients["extendedIngredients"].length; i++){
+        var ingredientNameAndQuant = String(ingredients["extendedIngredients"][i].original);
+        var ingredientName= String(ingredients["extendedIngredients"][i].name);
+        var ingredientAmountValue= String(ingredients["extendedIngredients"][i].amount);
+        var ingredientAmountUnit= String(ingredients["extendedIngredients"][i].unit);
         recipeIngredients.innerHTML += ingredientName;
         recipeIngredients.innerHTML += " - ";
         recipeIngredients.innerHTML += ingredientAmountValue;
@@ -83,10 +88,11 @@ function showFullRecipe(fullRecipe){
         for(j = 0; j < fullRecipe[i]["steps"].length; j++){
             var stepNumber = String(fullRecipe[i]["steps"][j].number);
             var stepInstruction = String(fullRecipe[i]["steps"][j].step);
+            recipeInstructions.innerHTML += "Step: ";
             recipeInstructions.innerHTML += stepNumber;
             recipeInstructions.innerHTML += "</br>";
             recipeInstructions.innerHTML += stepInstruction;
-            recipeInstructions.innerHTML += "</br>";
+            recipeInstructions.innerHTML += "</br></br>";
         }
     } 
 }

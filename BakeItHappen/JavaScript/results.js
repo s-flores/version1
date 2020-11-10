@@ -28,6 +28,8 @@ $(document).ready(function() {
     // url += "&includeIngredients=" + searchValues;
     url += "&number=" + NUMBER_OF_RESULTS;
     url += "&offset=" + randomOffset;
+    url += "&instructionsRequired=true";
+
 
     //CALL THE FUNCTION TO CONNECT TO API and return the recipe list
     getRecipesAsync()

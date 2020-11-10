@@ -19,12 +19,12 @@
 }
 
 /* BAKE IT HAPPEN TITLE */
-#title{
+#recipeTitle{
     font-family: titleFont;
     text-align: center;
 	padding-top: .5em;
     padding-bottom: .1em;
-    font-size: 4rem;
+    font-size: 3.5rem;
     color:#ffa600;
 }
 
@@ -35,7 +35,7 @@
 
 /* fixes navbar to the top so it is over the banner */
 .navbar {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -43,15 +43,25 @@
     z-index: 100;
 }
 
+.navbar-brand{
+    font-family:titleFont;
+    font-size: 2rem;
+    color:#ffa600 !important;
+    
+}
+
 /* black background behind navbar when screen is narrow */
-/* @media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
     .nav-link {
-        background-color: rgb(0, 0, 0,.4);
+        background-color: rgb(0, 0, 0,1);
+        border-style: dashed;
     }
-} */
+}
 
 .nav-link{
-    color: orange !important ;
+    color:#ffa600  !important ;
+    text-shadow: 5px 1px 35px black;
+    
 }
 .nav-link:hover{
     color: darkorange !important;
@@ -69,7 +79,8 @@
     border: 3px solid #ffa600;
     border-top-left-radius: .8rem;
     border-bottom-left-radius: .3rem;
-    width: 0%;
+    
+
 }
 
 
@@ -80,19 +91,16 @@
 }
 
 
-.search-button{
-    background-color: white;
-    font-size: 1.3rem;
-}
+
 .search-button-small{
     background-color: white;
-    font-size: 1rem;
+    font-size: .75rem;
     width: 0%;
     justify-content: center;
     
 }
 
-.search-button:active{
+.search-button, .search-button-small:active{
     color:  #ffa600;
 }
 
@@ -113,3 +121,62 @@
     width: 100%;
     
 }
+
+.recipe-item{
+    color: black;
+    overflow: hidden !important;
+    text-decoration:none ;
+}
+
+.recipe-item:hover{
+    color: black;
+    overflow: hidden;
+    text-decoration:none;
+}
+
+.recipe-name{
+    font-size: 2.25rem;
+}
+
+.recipe-desc{
+    font-size: 1.5rem;
+}
+
+.orange-border{
+    border-color:rgb(255, 153, 0, .1) !important;
+    border: solid;
+}
+.orange-border:hover{
+    border-color:rgb(255, 153, 0, .6) !important;
+    border: dashed;
+}
+.orange-border-static{
+    border-color:rgb(255, 153, 0, .6) !important;
+    border: dashed;
+}
+
+.search-result-title{
+    font-family: titleFont;
+    font-size: 3rem;
+}
+
+
+.orange-color{
+    color: orange !important;
+}
+
+
+.orange-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 166, 0,1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    /* background-image: url("/food-svgrepo-com.svg "); */
+    /* background-image: url("/Pictures/bihstickfigure.png"); */
+  }
+
+.orange-toggler{
+    border: none;
+}
+  
+
+.search-item{
+}
+
