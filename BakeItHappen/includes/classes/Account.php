@@ -10,8 +10,22 @@ class Account
         $this->con = $con;
         $this->errorArray = array();
     }
+
+    public function login($un, $pw){
+        $pw = md5($pw);
+        $query = mysqli_query($this->con, "SELECT * FROM Users WHERE username='$un' AND password='$pw'" );
+
+        if(mysqli_num_rows($query) == 1){
+            return true;
+        }
+        else{
+            array_push($this->errorArray, Constants::loginFailed);
+            return false;
+        }
+    }
+
     public function register($un,$fn,$ln,$em,$em2,$pw,$pw2){
-        $this->validateUsername($un);
+        $this->validateUsername($un); 
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
         $this->validateEmails($em,$em2);
@@ -26,6 +40,7 @@ class Account
         }
     }
 
+    // If the error message is not in the array, then echo empty string
     public function getError($error){
         if(!in_array($error, $this->errorArray)){
             $error = "";
@@ -46,7 +61,11 @@ class Account
             array_push($this->errorArray, Constants::usernameCharacters);
             return;
         }
-        // TODO: check if username exist
+        //check if username exist
+        $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM Users WHERE username='$un'");
+        if(mysqli_num_rows( $checkUsernameQuery) != 0){
+            array_push($this->errorArray, Constants::usernameTaken);
+        }
     }
     private function validateFirstName($fn){
         if(strlen($fn) > 25 || strlen($fn) < 2){
@@ -69,7 +88,11 @@ class Account
             array_push($this->errorArray, Constants::emailInvalid);
             return;
         }
-        //TODO: check that username is not taken
+        //check that email is not taken
+        $checkEmailQuery = mysqli_query($this->con, "SELECT email FROM Users WHERE email='$em'");
+        if(mysqli_num_rows( $checkEmailQuery) != 0){
+            array_push($this->errorArray, Constants::emailTaken);
+        }
     }
     private  function validatePasswords($pw, $pw2){
         if($pw != $pw2){
