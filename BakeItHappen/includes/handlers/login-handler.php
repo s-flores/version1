@@ -9,6 +9,6 @@ if (isset($_POST['loginButton'])){
 
     if($result == true){
         $_SESSION['userLoggedIn'] = $username; 
-        header("Location: profile.php");
+        header("Location: submit.html");
     }
 }

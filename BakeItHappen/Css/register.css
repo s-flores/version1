@@ -7,10 +7,11 @@ html, body{
     
     
     #background {
+        
         background-color: #000000;
         background-color: #ffffff;
         /*background-image: url(../Pictures/chopping.jpg);*/
-        background-image: url(../Pictures/banner2.png.jpg);
+        /* background-image: url(../Pictures/banner2.png);*/
         background-position: center;
         background-size: cover;
         display: table;
@@ -30,19 +31,19 @@ html, body{
     
     
     
-    #loginContainer * {
+    #loginContainer {
+  
         color:#ffa600;
-        -webkit-text-stroke: 1px black;
-        -webkit-text-fill-color: #ffa600;
-        font-family: titleFont;
+        font-family: sans-serif;
         font-size: 1.7rem;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: thick;
         box-sizing: border-box;
     
     }
     
     #loginContainer {
+        color:#ffa600;
         width: 80%;
         margin: 0 auto;
         position: relative;
@@ -51,14 +52,29 @@ html, body{
     }
     
     #inputContainer{
-        width: 400px;
+        width: 666px;
         padding: 45px;
-        
-        /*border-right: 5px solid #999999;*/
+        border-right: 4px dashed #ffa600;
+        border-bottom: 4px dashed #ffa600;
+        border-left: 4px dashed #ffa600;
+        border-top: 4px dashed #ffa600;
+        /*border-right: 5px solid #999999;     font-family: titleFont;        color:#ffa600;
+        -webkit-text-stroke: 1px black;
+        -webkit-text-fill-color: #ffa600; */
+    }
+    #inputContainer h1{
+        text-align: center;
+        font-family: titleFont;
+        font-size: 3rem;
     }
     #inputContainer h2{
         text-align: center;
+        font-family: titleFont;
+        font-size: 2rem;
     }
+
+   
+
     #inputContainer input[type="text"],
     #inputContainer input[type="email"],
     #inputContainer input[type="password"]{
@@ -69,10 +85,11 @@ html, body{
         height: 27px;
         line-height: 27px;
         width: 100%;
+        color:#ffa600;
     }
 
    #inputContainer label{
-        color: rgb(165, 13, 13);
+        color: rgb(8, 8, 8);
         
         margin-top: 15px;
         display: block;
@@ -80,32 +97,32 @@ html, body{
     /* 
       color: tomato;
         font-size: 12px;
-        font-size: 13px;
+        font-size: 13px;.
 */
     #inputContainer button{
         background-color: transparent;
         border: 2px solid #ffa600;
         border-radius: 250px;
-        color: #ffffff;
+        color: #ffa600;
         display: block;
         font-size: 16px;
-        font-size: 2rem;
+        font-size: 1rem;
         letter-spacing: 1px;
         margin: 20px auto;
         height: 41px;
-        width: 100%;
     }
     #inputContainer button:hover{
         cursor: pointer;
     }
     .hasAccountText span{
-        font-size: 12px;
+       
         font-weight: bold;
         cursor: pointer;
         
     }
     .hasAccountText{
-       text-align: center;  
+      font-size: 11px;
+      text-align: center;  
     }
     #registerForm, #loginForm {
         display: none;

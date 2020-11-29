@@ -22,7 +22,6 @@ function getInputValue($name){
     <head>
         <title>Register Page</title>
 
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
           <!-- Required meta tags -->
@@ -32,15 +31,14 @@ function getInputValue($name){
          <!-- Bootstrap CSS -->
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-
          <!-- Font Awesome CSS-->
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
 
          <!-- Custom Css -->
         <link rel="stylesheet" type="text/css" href="Css/register.css">
-
-
-        <script src="js/register.js"> </script>
+        
+        <!-- JQuery -->
+        <script src="JavaScript/register.js"> </script>
 
     </head>
     <body>
@@ -83,12 +81,12 @@ function getInputValue($name){
                         </li>  -->
 
                         <li class="nav-item"> 
-                            <a class="nav-link  " href="home.html"> 
+                            <a class="nav-link  "href="home.html"> 
                             Home 
                             </a> 
                         </li> 
                         <li class="nav-item "> 
-                            <a class="nav-link rounded-right " href="/home2.html"> 
+                            <a class="nav-link rounded-right" href="register.php"> 
                             Login/Signup 
                             </a> 
                         </li> 
@@ -103,6 +101,7 @@ function getInputValue($name){
     <div id="loginContainer">
             <div id="inputContainer">
                 <form id="loginForm" action="register.php" method="POST" enctype="multipart/form-data">
+                    <h1>Bake It Happen</h1>
                     <h2>Login to your account</h2>
                     <p>
                         <?php echo $account->getError(Constants::loginFailed);?>
@@ -121,6 +120,7 @@ function getInputValue($name){
                 </form>
             
                 <form id="registerForm" action="register.php" method="POST" enctype="multipart/form-data" >
+                    <h1>Bake It Happen</h1>
                     <h2>Create your free account</h2>
                     <p>
                         <?php echo $account->getError(Constants::usernameCharacters); ?>
