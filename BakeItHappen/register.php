@@ -21,13 +21,88 @@ function getInputValue($name){
 
     <head>
         <title>Register Page</title>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+          <!-- Required meta tags -->
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+         <!-- Font Awesome CSS-->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+
+         <!-- Custom Css -->
         <link rel="stylesheet" type="text/css" href="Css/register.css">
+
+
+        <script src="js/register.js"> </script>
+
     </head>
     <body>
+
+            <?php   
+            if(isset($_POST['registerButton'])){
+                echo '<script>
+                        $(document).ready(function(){  
+                        $("#loginForm").hide();
+                        $("#registerForm").show();
+                        });
+                    </script>';
+            }
+            else {
+               echo '<script>
+                        $(document).ready(function(){  
+                        $("#loginForm").show();
+                        $("#registerForm").hide();
+                        });
+                    </script>';
+            }
+            ?>
+
+
+
+
+<div class="overlay">
+        <header>
+            <!--Front page banner image-->
+            <img src="Pictures/banner2.png" class="img-long" width="100%;" height="" alt="">
+
+            <!--Top navigation bar-->
+            <div class="container-fluid ">
+                <nav class="navbar navbar-expand  bg-transparent"> 
+                    <ul class="navbar-nav ml-auto "> 
+                        <!-- <li class="nav-item  "> 
+                            <a class="nav-link rounded-left" href="foodmap.html"> 
+                            Find Restaurants 
+                            </a> 
+                        </li>  -->
+
+                        <li class="nav-item"> 
+                            <a class="nav-link  " href="home.html"> 
+                            Home 
+                            </a> 
+                        </li> 
+                        <li class="nav-item "> 
+                            <a class="nav-link rounded-right " href="/home2.html"> 
+                            Login/Signup 
+                            </a> 
+                        </li> 
+                       
+                    </ul> 
+                </nav> 
+            </div>  
+        </header>
+
+
     <div id="background">
     <div id="loginContainer">
             <div id="inputContainer">
-                <form id="loginForm" action="register.php" method="POST">
+                <form id="loginForm" action="register.php" method="POST" enctype="multipart/form-data">
                     <h2>Login to your account</h2>
                     <p>
                         <?php echo $account->getError(Constants::loginFailed);?>
@@ -39,10 +114,13 @@ function getInputValue($name){
                         <input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
                     </p>
                     <button type="submit" name="loginButton">LOG IN</button>
+                    <div class="hasAccountText">
+                        <span id="hideLogin">Don't have an account yet? Click here to sign up.</span>
+                    </div>
             
                 </form>
             
-                <form id="registerForm" action="register.php" method="POST">
+                <form id="registerForm" action="register.php" method="POST" enctype="multipart/form-data" >
                     <h2>Create your free account</h2>
                     <p>
                         <?php echo $account->getError(Constants::usernameCharacters); ?>
@@ -65,7 +143,14 @@ function getInputValue($name){
                         <input id="lastName" name="lastName" type="text" placeholder="e.g Simpson"
                             value="<?php getInputValue('lastName') ?>" required>
                     </p>
-            
+                   
+                    
+                        <p>
+                        <label class="custom-file-upload">
+                        Select image to upload:
+                        <input type="file" name="image" id="image">
+                        </p>
+                        </label>
                     <p>
                         <?php echo $account->getError(Constants::emailTaken) ?>
                         <?php echo $account->getError(Constants::emailNotMatch) ?>
@@ -96,14 +181,27 @@ function getInputValue($name){
             
             
                     <button type="submit" name="registerButton">SIGN UP</button>
+                    <div class="hasAccountText">
+                        <span id="hideRegister">Already have an account? Click here to login.</span>
+                    </div>
             
-                </form>
-            
-            
-            
+                </form>            
             </div>
         </div>
     </div>
-    
+         <!--Bottom section of page, contains silly quote-->
+         <div class="row justify-content-center text-center m-5 ">
+                    <div class="col-md-8 quote ">
+                        <h7>"Let food be thy medicine and medicine be thy food."
+                            - Hippocrates</h7>
+                    </div>
+                </div>
+
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+       
+
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </body>
     </html>

@@ -24,7 +24,7 @@ class Account
         }
     }
 
-    public function register($un,$fn,$ln,$em,$em2,$pw,$pw2){
+    public function register($un,$fn,$ln,$em,$em2,$pw,$pw2, $pic){
         $this->validateUsername($un); 
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
@@ -33,7 +33,7 @@ class Account
 
         if(empty($this->errorArray)){
             //Insert into DB
-            return $this->insertUserDetails($un,$fn,$ln,$em,$pw);
+            return $this->insertUserDetails($un,$fn,$ln,$em,$pw, $pic);
         }
         else{
             return false;
@@ -47,9 +47,10 @@ class Account
         }
         return "<span class='errorMessage'>$error</span>";
     }
-    private function insertUserDetails($un,$fn,$ln,$em,$pw){
+    private function insertUserDetails($un,$fn,$ln,$em,$pw, $pic){
         $encryptedPw = md5($pw);
-        $profilePic = "assets/images/profile-pics/no-image.jpg";
+        //$profilePic = "assets/images/profile-pics/no-image.jpg";
+        $profilePic = "images/" . basename($pic);
         $date = date("Y-m-d");
 
         $sql ="INSERT INTO Users VALUES(NULL,'$un','$fn','$ln','$em','$encryptedPw','$date','$profilePic')";

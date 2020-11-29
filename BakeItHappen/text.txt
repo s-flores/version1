@@ -1,0 +1,65 @@
+html, body{
+padding: 0;
+margin: 0;
+height: 100%;
+}
+
+
+#background {
+    background-color: #000000;
+    background-image: url(../Pictures/register.jpg);
+    background-position: center;
+    background-size: cover;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* CUSTOM TITLE FONT */
+@font-face {
+    font-family: titleFont;
+    src: url(../Fonts/QuiteMagicalRegular-8VA2.ttf);
+}
+
+
+
+
+#loginContainer * {
+    color:#ffa600;
+    font-family: titleFont;
+    font-size: 1.7rem;
+    font-weight: normal;
+    box-sizing: border-box;
+
+}
+
+#loginContainer {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1024px;
+}
+
+#inputContainer{
+    width: 400px;
+    padding: 45px;
+    float: left;
+    border-right: 1px solid #999999;
+}
+#inputContainer h2{
+    text-align: center;
+}
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"]{
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    height: 27px;
+    line-height: 27px;
+    width: 100%;
+}
+
+
