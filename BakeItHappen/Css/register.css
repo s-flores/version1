@@ -58,6 +58,8 @@ html, body{
         border-bottom: 4px dashed #ffa600;
         border-left: 4px dashed #ffa600;
         border-top: 4px dashed #ffa600;
+        float: left;
+
         /*border-right: 5px solid #999999;     font-family: titleFont;        color:#ffa600;
         -webkit-text-stroke: 1px black;
         -webkit-text-fill-color: #ffa600; */
@@ -98,9 +100,8 @@ html, body{
       color: tomato;
         font-size: 12px;
         font-size: 13px;.
-*/
-    #inputContainer button{
-        background-color: transparent;
+         background-color: transparent;
+        background-color: #1414f4e8;
         border: 2px solid #ffa600;
         border-radius: 250px;
         color: #ffa600;
@@ -110,20 +111,35 @@ html, body{
         letter-spacing: 1px;
         margin: 20px auto;
         height: 41px;
+*/
+    #inputContainer button{
+        background-color: #007bff;;
+        border-radius: 8px;
+        color: white;
+        display: block;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin: 20px auto;
+        height: 41px;
+        border: none;
     }
+
     #inputContainer button:hover{
         cursor: pointer;
     }
+
     .hasAccountText span{
        
         font-weight: bold;
         cursor: pointer;
         
     }
+
     .hasAccountText{
       font-size: 11px;
       text-align: center;  
     }
+
     #registerForm, #loginForm {
         display: none;
     }
@@ -141,17 +157,17 @@ html, body{
     position: absolute;
     width: 100%;
     top: 0;
-    left: 0;
-    
+    left: 0;    
     z-index: 100;
 }
+
 .nav-link{
     color: orange !important ;
 }
+
 .nav-link:hover{
     color: darkorange !important;
 }
-
 
 .quote{
     font-style: italic;

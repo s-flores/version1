@@ -9,6 +9,7 @@ if(isset($_SESSION['userLoggedIn'])){
 else{
     header("Location: register.php");
 }
+
 ?>
 
 <html>
@@ -16,6 +17,7 @@ else{
         <title>Profile page</title>
     </head>
     <body>
+    <?php echo $query ?>
         Profile Page
     </body>
 </html>
